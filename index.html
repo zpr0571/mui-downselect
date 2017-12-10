@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>财务</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" type="text/css" href="mui.picker.min.css" />
+	</head>
+
+	<body>
+
+		<!--银行卡-->
+		<div class="ID">
+			<span class="sm-mo-word ID-name">工商银行  (12312313123123)</span>
+			<span class="mui-icon mui-icon-arrowdown"></span>
+		</div>
+		<script src="mui.min.js"></script>
+		<script src="mui.picker.min.js"></script>
+		<script type="text/javascript">
+			//选项卡
+			mui(document.body).on('tap', '.ID', function() {
+				//初始化popPicker组件
+				var picker = new mui.PopPicker();
+				picker.setData([{
+					text: '农业银行  (72312313123123)'
+				}, {
+					text: '工商银行  (62312313123123)'
+				}, {
+					text: '招商银行  (82312313123123)'
+				}, {
+					text: '浦东银行  (82312313123123)'
+				}, ]);
+				picker.show(function(selectItems) {
+					mui('.ID-name')[0].innerHTML = selectItems[0].text;
+				})
+			});
+		</script>
+	</body>
+
+</html>
